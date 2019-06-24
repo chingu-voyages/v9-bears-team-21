@@ -3,6 +3,7 @@ export default (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     user_uid: {
       allowNull: false,
+      primaryKey: true,
       type: DataTypes.UUID,
     },
     first_name:{
@@ -45,7 +46,7 @@ export default (sequelize, DataTypes) => {
   Users.associate = function(models) {
     // associations can be defined here
     Users.belongsTo(models.Schools, {
-      foreignKey: 'user_uid',
+      foreignKey: 'school_uid',
     })
   };
   return Users;

@@ -2,48 +2,49 @@
 export default (sequelize, DataTypes) => {
   const Schools = sequelize.define('Schools', {
     school_uid:{ 
+      allowNull: false,
+      primaryKey: true,
       type: DataTypes.UUID,
-      allowNull: false
     },
     school_name: {
+      allowNull: false,
       type: DataTypes.STRING,
-      allowNull: false
     },
     admin_uid: {
+      allowNull: false,
       type:DataTypes.UUID,
-      allowNull: false
     },
     email: {
+      allowNull: false,
       type: DataTypes.STRING,
-      allowNull: false
     },
     password: {
+      allowNull: false,
       type: DataTypes.STRING,
-      allowNull: false
     },
     address_line_1: {
+      allowNull: false,
       type: DataTypes.STRING,
-      allowNull: false
     },
     address_line_2: {
+      allowNull: true,
       type: DataTypes.STRING,
-      allowNull: true
     },
     state: {
+      allowNull: true,
       type: DataTypes.STRING,
-      allowNull: true
     },
     country: {
-      type: DataTypes.STRING,
       allowNull: true,
+      type: DataTypes.STRING,
     },
     postal_code: {
-      type: DataTypes.STRING,
       allowNull: true,
+      type: DataTypes.STRING,
     },
     city: {
+      allowNull: true,
       type: DataTypes.STRING,
-      allowNull: true
     }
   },{});
   Schools.associate = function(models) {

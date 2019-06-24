@@ -2,10 +2,12 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+
 const config = {
   development: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
+    logging: true,
     database: process.env.DB_DEV_NAME,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,

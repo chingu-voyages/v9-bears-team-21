@@ -3,6 +3,7 @@ export default (sequelize, DataTypes) => {
   const Results = sequelize.define('Results', {
     result_uid: {
       allowNull: false,
+      primaryKey: true,
       type: DataTypes.UUID,
     },
     year: {
@@ -35,7 +36,7 @@ export default (sequelize, DataTypes) => {
     Results.belongsTo(models.Schools, {
       foreignKey: 'school_uid',
       onDelete: 'CASCADE'
-    },
+    }),
     Results.belongsTo(models.Users, {
       foreignKey: 'user_uid',
       onDelete: 'CASCADE'
