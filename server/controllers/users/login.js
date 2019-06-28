@@ -26,6 +26,7 @@ login.post = (req, res) => {
         const user = {
           user_uid: userData.user_uid,
           role: userData.role,
+          loggedIn: true,
         }
         req.session = user
         return res.status(200).json({msg: "User logged in successfully"})
